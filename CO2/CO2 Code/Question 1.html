@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Responsive Navigation Bar</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4f4f4;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#333;
+padding:15px 25px;
+color:white;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+}
+
+.menu{
+display:flex;
+list-style:none;
+gap:20px;
+}
+
+.menu li a{
+text-decoration:none;
+color:white;
+font-size:18px;
+transition:0.3s;
+}
+
+.menu li a:hover{
+color:#00d4ff;
+}
+
+.hamburger{
+display:none;
+font-size:30px;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+
+.menu{
+display:none;
+flex-direction:column;
+width:100%;
+background:#444;
+position:absolute;
+top:65px;
+left:0;
+padding:20px;
+}
+
+.menu.active{
+display:flex;
+}
+
+.hamburger{
+display:block;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+ShopEasy
+</div>
+
+<ul class="menu" id="menu">
+
+<li><a href="#">Home</a></li>
+
+<li><a href="#">Products</a></li>
+
+<li><a href="#">Categories</a></li>
+
+<li><a href="#">Cart</a></li>
+
+<li><a href="#">Contact</a></li>
+
+</ul>
+
+<div class="hamburger" onclick="toggleMenu()">
+
+☰
+
+</div>
+
+</nav>
+
+<div style="padding:40px;text-align:center;">
+
+<h1>Responsive Navigation Bar</h1>
+
+<p>
+Resize the browser window to observe how the navigation bar adapts to desktop, tablet, and mobile devices.
+</p>
+
+</div>
+
+<script>
+
+function toggleMenu(){
+
+document.getElementById("menu").classList.toggle("active");
+
+}
+
+</script>
+
+</body>
+
+</html>

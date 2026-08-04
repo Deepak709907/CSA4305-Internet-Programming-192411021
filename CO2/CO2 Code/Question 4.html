@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mobile-First Blog Layout</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4f4f4;
+line-height:1.6;
+}
+
+header{
+background:#2c3e50;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+nav{
+background:#34495e;
+display:flex;
+flex-direction:column;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+padding:15px;
+border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+.container{
+display:flex;
+flex-direction:column;
+padding:20px;
+gap:20px;
+}
+
+article{
+background:white;
+padding:20px;
+border-radius:8px;
+box-shadow:0 4px 8px rgba(0,0,0,0.2);
+}
+
+article h2{
+margin-bottom:10px;
+}
+
+aside{
+background:#ecf0f1;
+padding:20px;
+border-radius:8px;
+}
+
+footer{
+background:#2c3e50;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:20px;
+}
+
+@media(min-width:768px){
+
+nav{
+flex-direction:row;
+justify-content:center;
+}
+
+nav a{
+border:none;
+padding:20px;
+}
+
+.container{
+flex-direction:row;
+}
+
+article{
+flex:3;
+}
+
+aside{
+flex:1;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Tech Blog</h1>
+
+<p>Mobile-First Responsive Blog Layout</p>
+
+</header>
+
+<nav>
+
+<a href="#">Home</a>
+
+<a href="#">Articles</a>
+
+<a href="#">Categories</a>
+
+<a href="#">About</a>
+
+<a href="#">Contact</a>
+
+</nav>
+
+<div class="container">
+
+<article>
+
+<h2>Latest Technology Trends</h2>
+
+<p>
+This blog demonstrates a mobile-first responsive layout. On mobile devices,
+the content is displayed in a single column for better readability. On tablets
+and desktops, the layout automatically expands into multiple columns using
+CSS media queries.
+</p>
+
+</article>
+
+<aside>
+
+<h3>Recent Posts</h3>
+
+<ul>
+
+<li>Artificial Intelligence</li>
+
+<li>Cloud Computing</li>
+
+<li>Cyber Security</li>
+
+<li>Web Development</li>
+
+<li>Machine Learning</li>
+
+</ul>
+
+</aside>
+
+</div>
+
+<footer>
+
+<p>&copy; 2026 Tech Blog. All Rights Reserved.</p>
+
+</footer>
+
+</body>
+
+</html>
