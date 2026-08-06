@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Bus Ticket Booking</title>
+<style>
+body{font-family:Arial;background:#e6f2ff;}
+table{background:white;padding:10px;border-radius:8px;}
+h2{color:darkblue;}
+</style>
+</head>
+
+<body>
+
+<center>
+<h2>Online Bus Ticket Booking</h2>
+
+<form>
+
+<table>
+
+<tr>
+<td>Passenger Name</td>
+<td><input type="text" required></td>
+</tr>
+
+<tr>
+<td>Mobile Number</td>
+<td><input type="tel"></td>
+</tr>
+
+<tr>
+<td>Email</td>
+<td><input type="email"></td>
+</tr>
+
+<tr>
+<td>From</td>
+<td>
+<select>
+<option>Chennai</option>
+<option>Coimbatore</option>
+<option>Madurai</option>
+<option>Trichy</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>To</td>
+<td>
+<select>
+<option>Bangalore</option>
+<option>Salem</option>
+<option>Hyderabad</option>
+<option>Vellore</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Journey Date</td>
+<td><input type="date"></td>
+</tr>
+
+<tr>
+<td>Bus Type</td>
+<td>
+<input type="radio" name="bus">AC
+<input type="radio" name="bus">Non-AC
+<input type="radio" name="bus">Sleeper
+</td>
+</tr>
+
+<tr>
+<td>Seats</td>
+<td><input type="number" min="1" max="6"></td>
+</tr>
+
+<tr>
+<td>Payment</td>
+<td>
+<select>
+<option>UPI</option>
+<option>Card</option>
+<option>Net Banking</option>
+<option>Cash</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Remarks</td>
+<td><textarea rows="3" cols="20"></textarea></td>
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="Book Ticket">
+<input type="reset" value="Clear">
+</td>
+</tr>
+
+</table>
+
+</form>
+</center>
+
+</body>
+</html>
