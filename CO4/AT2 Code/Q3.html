@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Q3: JSP Request Flow</title>
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 850px; margin: 40px auto; padding: 0 20px; color: #1a1a1a; line-height: 1.5; }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; }
+  h2 { font-size: 16px; margin-top: 28px; }
+  pre { background: #1e1e2e; color: #d4d4d4; padding: 16px; border-radius: 6px; overflow-x: auto; font-family: 'Consolas', 'Courier New', monospace; font-size: 13.5px; line-height: 1.5; }
+  .output { background: #0c0c0c; color: #d4d4d4; padding: 16px; border-radius: 6px; font-family: 'Consolas', 'Courier New', monospace; font-size: 13.5px; line-height: 1.5; }
+  .kw { color: #569cd6; }
+  .str { color: #ce9178; }
+  .com { color: #6a9955; }
+  .cls { color: #4ec9b0; }
+</style>
+</head>
+<body>
+  <h1>Question 3: JSP Request Flow</h1>
+  <p>Pseudocode illustrating the request&ndash;response flow in a JSP-based web application: the client request is handled by a Servlet, which fetches data and passes it to the JSP for dynamic content generation.</p>
+
+  <h2>Code</h2>
+  <pre><span class="kw">public class</span> <span class="cls">Main</span> {
+
+    <span class="kw">static class</span> <span class="cls">Database</span> {
+        <span class="kw">static</span> String getData() {
+            <span class="kw">return</span> <span class="str">"Welcome to the Student Portal"</span>;
+        }
+    }
+
+    <span class="kw">static class</span> <span class="cls">Servlet</span> {
+        <span class="kw">static</span> String processRequest() {
+            System.out.println(<span class="str">"Servlet processing request..."</span>);
+            <span class="kw">return</span> Database.getData();
+        }
+    }
+
+    <span class="kw">static class</span> <span class="cls">JSP</span> {
+        <span class="kw">static void</span> generateResponse(String data) {
+            System.out.println(<span class="str">"JSP generating dynamic content..."</span>);
+            System.out.println(<span class="str">"Response: "</span> + data);
+        }
+    }
+
+    <span class="kw">public static void</span> main(String[] args) {
+        System.out.println(<span class="str">"Client sends JSP request"</span>);
+        String data = Servlet.processRequest();
+        JSP.generateResponse(data);
+        System.out.println(<span class="str">"Response sent to Client"</span>);
+    }
+}</pre>
+
+  <h2>Output</h2>
+  <div class="output">Client sends JSP request
+Servlet processing request...
+JSP generating dynamic content...
+Response: Welcome to the Student Portal
+Response sent to Client
+
+=== Code Execution Successful ===</div>
+</body>
+</html>

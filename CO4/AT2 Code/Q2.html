@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Q2: MVC Workflow</title>
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 850px; margin: 40px auto; padding: 0 20px; color: #1a1a1a; line-height: 1.5; }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; }
+  h2 { font-size: 16px; margin-top: 28px; }
+  pre { background: #1e1e2e; color: #d4d4d4; padding: 16px; border-radius: 6px; overflow-x: auto; font-family: 'Consolas', 'Courier New', monospace; font-size: 13.5px; line-height: 1.5; }
+  .output { background: #0c0c0c; color: #d4d4d4; padding: 16px; border-radius: 6px; font-family: 'Consolas', 'Courier New', monospace; font-size: 13.5px; line-height: 1.5; }
+  .kw { color: #569cd6; }
+  .str { color: #ce9178; }
+  .com { color: #6a9955; }
+  .cls { color: #4ec9b0; }
+</style>
+</head>
+<body>
+  <h1>Question 2: MVC Workflow</h1>
+  <p>Pseudocode representation of the Model&ndash;View&ndash;Controller workflow: the Controller receives the request, the Model supplies the data, and the View renders the response.</p>
+
+  <h2>Code</h2>
+  <pre><span class="kw">public class</span> <span class="cls">Main</span> {
+
+    <span class="com">// Model</span>
+    <span class="kw">static class</span> <span class="cls">StudentModel</span> {
+        String getStudentName() {
+            <span class="kw">return</span> <span class="str">"Ram"</span>;
+        }
+    }
+
+    <span class="com">// View</span>
+    <span class="kw">static class</span> <span class="cls">StudentView</span> {
+        <span class="kw">void</span> display(String name) {
+            System.out.println(<span class="str">"Student Details"</span>);
+            System.out.println(<span class="str">"Name: "</span> + name);
+        }
+    }
+
+    <span class="com">// Controller</span>
+    <span class="kw">static class</span> <span class="cls">StudentController</span> {
+        StudentModel model;
+        StudentView view;
+
+        StudentController(StudentModel model, StudentView view) {
+            <span class="kw">this</span>.model = model;
+            <span class="kw">this</span>.view = view;
+        }
+
+        <span class="kw">void</span> processRequest() {
+            System.out.println(<span class="str">"Request received by Controller"</span>);
+            String name = model.getStudentName();
+            System.out.println(<span class="str">"Model processed the request"</span>);
+            view.display(name);
+            System.out.println(<span class="str">"Response sent to User"</span>);
+        }
+    }
+
+    <span class="kw">public static void</span> main(String[] args) {
+        StudentModel model = <span class="kw">new</span> StudentModel();
+        StudentView view = <span class="kw">new</span> StudentView();
+        StudentController controller =
+            <span class="kw">new</span> StudentController(model, view);
+
+        controller.processRequest();
+    }
+}</pre>
+
+  <h2>Output</h2>
+  <div class="output">Request received by Controller
+Model processed the request
+Student Details
+Name: Ram
+Response sent to User
+
+=== Code Execution Successful ===</div>
+</body>
+</html>

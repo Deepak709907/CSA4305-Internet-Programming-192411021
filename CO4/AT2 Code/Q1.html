@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Q1: XML Parsing Algorithm</title>
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 850px; margin: 40px auto; padding: 0 20px; color: #1a1a1a; line-height: 1.5; }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; }
+  h2 { font-size: 16px; margin-top: 28px; }
+  pre { background: #1e1e2e; color: #d4d4d4; padding: 16px; border-radius: 6px; overflow-x: auto; font-family: 'Consolas', 'Courier New', monospace; font-size: 13.5px; line-height: 1.5; }
+  .output { background: #0c0c0c; color: #d4d4d4; padding: 16px; border-radius: 6px; font-family: 'Consolas', 'Courier New', monospace; font-size: 13.5px; line-height: 1.5; }
+  .kw { color: #569cd6; }
+  .str { color: #ce9178; }
+  .com { color: #6a9955; }
+  .cls { color: #4ec9b0; }
+</style>
+</head>
+<body>
+  <h1>Question 1: XML Parsing Algorithm</h1>
+  <p>Pseudocode/implementation to parse an XML document containing product details, traverse its nodes, and display the extracted data.</p>
+
+  <h2>Code</h2>
+  <pre><span class="kw">import</span> javax.xml.parsers.*;
+<span class="kw">import</span> org.w3c.dom.*;
+<span class="kw">import</span> java.io.*;
+
+<span class="kw">public class</span> <span class="cls">Main</span> {
+    <span class="kw">public static void</span> main(String[] args) <span class="kw">throws</span> Exception {
+        String xml = <span class="str">"""
+            &lt;products&gt;
+                &lt;product&gt;
+                    &lt;id&gt;101&lt;/id&gt;
+                    &lt;name&gt;Laptop&lt;/name&gt;
+                    &lt;price&gt;55000&lt;/price&gt;
+                &lt;/product&gt;
+                &lt;product&gt;
+                    &lt;id&gt;102&lt;/id&gt;
+                    &lt;name&gt;Phone&lt;/name&gt;
+                    &lt;price&gt;30000&lt;/price&gt;
+                &lt;/product&gt;
+            &lt;/products&gt;
+            """</span>;
+
+        DocumentBuilderFactory f = DocumentBuilderFactory.newInstance();
+        DocumentBuilder b = f.newDocumentBuilder();
+        Document doc = b.parse(
+            <span class="kw">new</span> ByteArrayInputStream(xml.getBytes())
+        );
+
+        NodeList products = doc.getElementsByTagName(<span class="str">"product"</span>);
+        System.out.println(<span class="str">"Product Details"</span>);
+
+        <span class="kw">for</span> (<span class="kw">int</span> i = 0; i &lt; products.getLength(); i++) {
+            Element p = (Element) products.item(i);
+            String id    = p.getElementsByTagName(<span class="str">"id"</span>).item(0).getTextContent();
+            String name  = p.getElementsByTagName(<span class="str">"name"</span>).item(0).getTextContent();
+            String price = p.getElementsByTagName(<span class="str">"price"</span>).item(0).getTextContent();
+
+            System.out.println(<span class="str">"ID: "</span> + id);
+            System.out.println(<span class="str">"Name: "</span> + name);
+            System.out.println(<span class="str">"Price: "</span> + price);
+            System.out.println();
+        }
+    }
+}</pre>
+
+  <h2>Output</h2>
+  <div class="output">Product Details
+ID: 101
+Name: Laptop
+Price: 55000
+
+ID: 102
+Name: Phone
+Price: 30000
+
+=== Code Execution Successful ===</div>
+</body>
+</html>

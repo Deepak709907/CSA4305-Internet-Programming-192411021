@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Q5: PHP Validation</title>
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 850px; margin: 40px auto; padding: 0 20px; color: #1a1a1a; line-height: 1.5; }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; }
+  h2 { font-size: 16px; margin-top: 28px; }
+  pre { background: #1e1e2e; color: #d4d4d4; padding: 16px; border-radius: 6px; overflow-x: auto; font-family: 'Consolas', 'Courier New', monospace; font-size: 13.5px; line-height: 1.5; }
+  .output { background: #0c0c0c; color: #d4d4d4; padding: 16px; border-radius: 6px; font-family: 'Consolas', 'Courier New', monospace; font-size: 13.5px; line-height: 1.5; }
+  .kw { color: #569cd6; }
+  .str { color: #ce9178; }
+  .var { color: #9cdcfe; }
+  .com { color: #6a9955; }
+</style>
+</head>
+<body>
+  <h1>Question 5: PHP Validation</h1>
+  <p>Pseudocode for validating user input in a web form using PHP: check for empty fields, validate the email format and password length, and only allow submission once all validations pass.</p>
+
+  <h2>Code</h2>
+  <pre>&lt;?php
+<span class="var">$name</span> = <span class="str">"Ram"</span>;
+<span class="var">$email</span> = <span class="str">"Ram@gmail.com"</span>;
+<span class="var">$password</span> = <span class="str">"Pass1234"</span>;
+<span class="var">$errors</span> = [];
+
+<span class="kw">if</span> (empty(<span class="var">$name</span>))
+    <span class="var">$errors</span>[] = <span class="str">"Name is required"</span>;
+
+<span class="kw">if</span> (!filter_var(<span class="var">$email</span>, FILTER_VALIDATE_EMAIL))
+    <span class="var">$errors</span>[] = <span class="str">"Invalid email"</span>;
+
+<span class="kw">if</span> (strlen(<span class="var">$password</span>) &lt; 6)
+    <span class="var">$errors</span>[] = <span class="str">"Password must contain at least 6 characters"</span>;
+
+<span class="kw">if</span> (empty(<span class="var">$errors</span>)) {
+    echo <span class="str">"Validation Successful&lt;br&gt;"</span>;
+    echo <span class="str">"Form submitted successfully"</span>;
+} <span class="kw">else</span> {
+    echo <span class="str">"Validation Failed&lt;br&gt;"</span>;
+    foreach (<span class="var">$errors</span> as <span class="var">$error</span>)
+        echo <span class="var">$error</span> . <span class="str">"&lt;br&gt;"</span>;
+}
+?&gt;</pre>
+
+  <h2>Output</h2>
+  <div class="output">Validation Successful
+Form submitted successfully
+
+=== Code Execution Successful ===</div>
+</body>
+</html>

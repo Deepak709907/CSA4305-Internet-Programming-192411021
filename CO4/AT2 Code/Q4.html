@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Q4: Database Retrieval</title>
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 850px; margin: 40px auto; padding: 0 20px; color: #1a1a1a; line-height: 1.5; }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; }
+  h2 { font-size: 16px; margin-top: 28px; }
+  pre { background: #1e1e2e; color: #d4d4d4; padding: 16px; border-radius: 6px; overflow-x: auto; font-family: 'Consolas', 'Courier New', monospace; font-size: 13.5px; line-height: 1.5; }
+  .output { background: #0c0c0c; color: #d4d4d4; padding: 16px; border-radius: 6px; font-family: 'Consolas', 'Courier New', monospace; font-size: 13.5px; line-height: 1.5; white-space: pre; }
+  .kw { color: #569cd6; }
+  .str { color: #ce9178; }
+  .com { color: #6a9955; }
+  .cls { color: #4ec9b0; }
+</style>
+</head>
+<body>
+  <h1>Question 4: Database Retrieval</h1>
+  <p>Pseudocode for retrieving data from a database: connect, execute a query, process the result set row by row, and display the retrieved data.</p>
+
+  <h2>Code</h2>
+  <pre><span class="kw">public class</span> <span class="cls">Main</span> {
+
+    <span class="kw">static</span> String[][] database = {
+        {<span class="str">"101"</span>, <span class="str">"Laptop"</span>, <span class="str">"55000"</span>},
+        {<span class="str">"102"</span>, <span class="str">"Phone"</span>,  <span class="str">"30000"</span>},
+        {<span class="str">"103"</span>, <span class="str">"Tablet"</span>, <span class="str">"25000"</span>}
+    };
+
+    <span class="kw">public static void</span> main(String[] args) {
+        System.out.println(<span class="str">"Database Connected"</span>);
+        System.out.println(<span class="str">"Executing SELECT Query...\n"</span>);
+
+        System.out.println(<span class="str">"ID\tProduct\tPrice"</span>);
+
+        <span class="kw">for</span> (String[] row : database) {
+            System.out.println(
+                row[0] + <span class="str">"\t"</span> +
+                row[1] + <span class="str">"\t"</span> +
+                row[2]
+            );
+        }
+
+        System.out.println(<span class="str">"\nData Retrieved Successfully"</span>);
+        System.out.println(<span class="str">"Database Connection Closed"</span>);
+    }
+}</pre>
+
+  <h2>Output</h2>
+  <div class="output">Database Connected
+Executing SELECT Query...
+
+ID	Product	Price
+101	Laptop	55000
+102	Phone	30000
+103	Tablet	25000
+
+Data Retrieved Successfully
+Database Connection Closed
+
+=== Code Execution Successful ===</div>
+</body>
+</html>
